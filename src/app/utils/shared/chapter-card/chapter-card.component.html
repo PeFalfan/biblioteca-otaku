@@ -1,0 +1,13 @@
+<div class="video-card" (click)="navigateToVIdeo(chapterNumber)">
+  <div class="thumbnail">
+    <img [src]="series.chapters[chapterNumber].chapterThumbnailUrl" alt="Episodio Thumbnail" />
+        <div class="play-icon">&#9658;</div>
+    <!-- <div class="duration">23m</div> -->
+  </div>
+  <div class="video-info">
+    <p class="serie-name">{{series.title}}</p>
+    <h3 class="episode-title">{{series.chapters[chapterNumber].title}}</h3>
+    <!-- <h3 class="episode-title">E23 - Episodio 23</h3> -->
+    <!-- <p class="languages">Dob | Sub</p> -->
+  </div>
+</div>

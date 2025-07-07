@@ -1,0 +1,7 @@
+<app-details-banner [series]=series></app-details-banner>
+
+<div class="grid-container" >
+    <div class="grid-item"  *ngFor="let chapter of series.chapters; let i = index">
+        <app-chapter-card  [series]=series [chapterNumber]="i"></app-chapter-card>
+    </div>
+</div>

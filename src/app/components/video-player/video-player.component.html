@@ -1,14 +1,9 @@
-<h1>Titulo</h1>
-<div *ngIf="videos.length > 0">
-    <h3>Lista de videos:</h3>
-    <ul>
-        <li *ngFor="let video of videos">
-            <button (click)="selectVideo(video)">{{ video }}</button>
-        </li>
-    </ul>
-</div>
-
-<div *ngIf="selectedVideoUrl">
-    <h3>Reproduciendo:</h3>
-    <video [src]="selectedVideoUrl" width="640" height="360" controls></video>
-    </div>
+<div class="grid-container">
+    <h1>{{title}}</h1>
+</div> 
+<div class="grid-container">
+    <h3 >Reproduciendo:</h3>
+</div> 
+<div class="grid-container">
+    <video *ngIf="selectedVideoUrl != ''" id="videoPlayer" class="video-js vjs-default-skin" controls ></video>
+</div> 
