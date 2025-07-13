@@ -1,0 +1,82 @@
+/* styles.css global o en el componente */
+.container {
+    max-width: 1200px;
+    /* o 100%, según prefieras */
+    margin: 0 auto;
+    /* centra el contenido horizontalmente */
+    padding: 1rem;
+    /* espacio respecto a los bordes */
+    box-sizing: border-box;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* 12 columnas */
+    gap: 1rem;
+}
+
+h1 {
+    padding: 1rem;
+    color: white;
+    grid-column: span 12;
+}
+
+
+.item {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    grid-column: span 12;
+    /* ejemplo: que ocupe 4 de las 12 columnas */
+}
+
+.header-hero {
+    background-size: cover;
+    background-position: center;
+    padding: 80px 30px;
+    color: white;
+    position: relative;
+}
+
+.header-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.genres a {
+    color: #ccc;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.genres a:hover {
+    color: white;
+}
+
+.rating {
+    color: gold;
+}
+
+.btn-orange {
+    background-color: #f47521;
+    color: white;
+}
+
+.btn-orange:hover {
+    background-color: #d95e10;
+}
+
+.info-small {
+    font-size: 0.9rem;
+    color: #ccc;
+}

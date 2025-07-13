@@ -1,0 +1,17 @@
+<section class="updates-section">
+    <h2 class="section-title"> 📚 Directorio de manga</h2>
+
+    <div class="manga-grid">
+
+        <div class="manga-card" *ngFor="let manga of loadedMangas; let i = index" (click)="navigateTomangaDetails(manga.title)">
+            <div class="image-wrapper">
+                <img src="{{manga.coverUrl}}" alt="manga cover">
+                <span class="tag-new">Nuevo</span>
+            </div>
+            <div class="manga-info">
+                <h3>{{manga.title}}</h3>
+                <p>Capítulo {{manga.currentChapters}} <span class="update-time">hace 16 horas</span></p>
+            </div>
+        </div>
+    </div>
+</section>

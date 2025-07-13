@@ -1,0 +1,26 @@
+ <div class="header-hero d-flex align-items-center" [style.background-image]="'url(' + mangaDetails.coverUrl + ')'">
+    <div class="container">
+        <div class="header-content">
+            <h1 class="display-4 fw-bold">{{mangaTitle}}</h1>
+            <div class="d-flex align-items-center mb-2">
+                <div class="genres">
+                    <a href="#">{{mangaDetails.mainTag}}</a>
+                </div>
+            </div>
+            <div class="mb-3">
+                <a href="#" class="btn btn-orange btn-lg me-2">▶ Comenzar a leer desde el capitulo 1</a>
+            </div>
+            <p>
+                {{mangaDetails.description}}
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="grid">
+        <h1>{{ mangaTitle}}</h1>
+        <div class="item" *ngFor="let chapter of chaptersList; let i = index" (click)="navigateToReader(chapter)">
+            {{chapter}}
+        </div>
+    </div>
+</div>

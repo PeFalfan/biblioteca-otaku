@@ -1,0 +1,4 @@
+<h1>{{chapterName.replaceAll('%20', ' ')}}</h1>
+<div class="manga-container">
+    <img *ngFor="let img of images" [src]="img" class="pagina-manga" />
+</div>

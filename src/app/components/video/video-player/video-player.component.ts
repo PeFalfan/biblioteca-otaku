@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { VideoService } from '../../services/video.service';
 import { NgIf } from '@angular/common';
 import videojs from 'video.js';
 import type Player from 'video.js/dist/types/player';
 import { Router } from '@angular/router';
+import { VideoService } from '../../../services/video/video.service';
 
 @Component({
   standalone: true,

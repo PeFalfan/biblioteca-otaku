@@ -1,10 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { DetailsBannerComponent } from "../../utils/shared/details-banner/details-banner.component";
-import { ActivatedRoute, Router } from '@angular/router';
-import { SeriesDataModel } from '../../models/serie.model';
-import { VideoService } from '../../services/video.service';
-import { MyCardComponent } from "../../utils/shared/my-card/my-card.component";
-import { ChapterCardComponent } from "../../utils/shared/chapter-card/chapter-card.component";
+import { Component, OnInit } from '@angular/core';
+import { DetailsBannerComponent } from "../../../utils/shared/details-banner/details-banner.component";
+import { Router } from '@angular/router';
+import { SeriesDataModel, SeriesType } from '../../../models/serie.model';
+import { VideoService } from '../../../services/video/video.service';
+import { ChapterCardComponent } from "../../../utils/shared/chapter-card/chapter-card.component";
 import { NgFor } from '@angular/common';
 
 @Component({
@@ -15,8 +14,20 @@ import { NgFor } from '@angular/common';
 })
 export class SeriesDetailComponent implements OnInit{
 
-  series!: SeriesDataModel;
-  title!: string;
+  series: SeriesDataModel = {
+    id: 0,
+    title: '',
+    currentChapters: 0,
+    totalChapters: 0,
+    yearOfRelease: 0,
+    mainTag: SeriesType.ANIME,
+    allTags: [],
+    originalName: '',
+    description: '',
+    chapters: [],
+    mainImageUrl: ''
+  };
+  title: string = '';
   
   constructor(private router: Router, private videoService : VideoService) {}
   
