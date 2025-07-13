@@ -1,4 +1,13 @@
 <h1>{{chapterName.replaceAll('%20', ' ')}}</h1>
 <div class="manga-container">
     <img *ngFor="let img of images" [src]="img" class="pagina-manga" />
+
+    <div class="lector-container">
+        <div class="controles">
+            <button *ngIf="currentChapterIndex != 0" class="btn btn-secondary" (click)="previousChapter()">⟨ Anterior</button>
+            <button class="btn btn-secondary" (click)="nextChapter()">Siguiente ⟩</button>
+        </div>
+    
+    </div>
 </div>
+
