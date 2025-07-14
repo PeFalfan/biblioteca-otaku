@@ -106,5 +106,9 @@ export class MangaReaderComponent implements OnInit{
     }
   }
 
+  backToDetails() {
+    this.router.navigate([`manga/details/${this.mangaName}`]);
+  }
+
 }
 

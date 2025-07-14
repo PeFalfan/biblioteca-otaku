@@ -5,6 +5,7 @@
     <div class="lector-container">
         <div class="controles">
             <button *ngIf="currentChapterIndex != 0" class="btn btn-secondary" (click)="previousChapter()">⟨ Anterior</button>
+            <button class="btn btn-secondary" (click)="backToDetails()">Volver a detalle</button>
             <button class="btn btn-secondary" (click)="nextChapter()">Siguiente ⟩</button>
         </div>
     
