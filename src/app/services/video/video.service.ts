@@ -7,7 +7,7 @@ import { SeriesDataModel } from '../../models/serie.model';
   providedIn: 'root'
 })
 export class VideoService {
-  private baseUrl = 'http://127.0.0.1:8181/api';
+  private baseUrl = 'http://3.88.168.28:8181/api';
 
   constructor(private http: HttpClient) { }
 

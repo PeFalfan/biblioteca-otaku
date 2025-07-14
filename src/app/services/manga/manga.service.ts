@@ -7,7 +7,7 @@ import { MangaDataModel } from '../../models/manga.model';
   providedIn: 'root'
 })
 export class MangaService {
-  private baseUrl = 'http://127.0.0.1:8181/api/mangas';
+  private baseUrl = 'http://3.88.168.28:8181/api/mangas';
 
   constructor(private http: HttpClient) { }
 
