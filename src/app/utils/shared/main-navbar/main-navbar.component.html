@@ -22,7 +22,7 @@
                     <a class="nav-link" (click)="goTo('library')" href="#">Biblioteca</a>
                 </li>
                 <li class="nav-item" *ngIf="isUserLogged">
-                    <a class="nav-link" (click)="goTo('login')" href="#">Login</a>
+                    <a class="nav-link" (click)="logout()" href="#">LogOut</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" (click)="goTo('myAccount')" href="#">Mi cuenta</a>
