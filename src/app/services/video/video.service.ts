@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SeriesDataModel } from '../../models/serie.model';
+import { enviroment } from '../../../enviroments/enviroment.develop';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VideoService {
-  private baseUrl = 'http://3.88.168.28:8181/api';
+  private baseUrl = `${enviroment.apiUrl}/api`;
 
   constructor(private http: HttpClient) { }
 

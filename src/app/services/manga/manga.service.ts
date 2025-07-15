@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MangaDataModel } from '../../models/manga.model';
+import { enviroment } from '../../../enviroments/enviroment.develop';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MangaService {
-  private baseUrl = 'http://3.88.168.28:8181/api/mangas';
+  private baseUrl = `${enviroment.apiUrl}/api/mangas`;
 
   constructor(private http: HttpClient) { }
 

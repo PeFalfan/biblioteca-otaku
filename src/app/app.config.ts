@@ -28,16 +28,6 @@ export const appConfig: ApplicationConfig = {
       provide: APP_INITIALIZER,
       multi: true,
       useFactory: initAuth,
-      // useFactory: (oidcService: OidcSecurityService) => {
-      //   return () =>
-      //     firstValueFrom(oidcService.checkAuth()).then(({ isAuthenticated }) => {
-      //       console.log('isAuthenticated: ', isAuthenticated);
-      //       if (!isAuthenticated) {
-      //         console.log('Redirigiendo a login...');
-      //         oidcService.authorize();
-      //       }
-      //     });
-      // },
       deps: [OidcSecurityService],
     },
   ]
