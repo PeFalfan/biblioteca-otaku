@@ -1,5 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
+import { AuthService } from '../../../services/auth/auth.service';
 
 @Component({
   selector: 'app-main-navbar',
@@ -11,16 +12,19 @@ export class MainNavbarComponent {
 
   isUserLogged: boolean = true;
 
+  constructor(private authService: AuthService) {}
+
   goTo(navigation: string) {
   }
 
   logout(): void {
-    sessionStorage.clear();
-    localStorage.clear();
+    this.authService.logout();
+    // sessionStorage.clear();
+    // localStorage.clear();
     
-    const clientId = '7gk5b0vbt5no9ek8kho0n5gv0f';
-    const logoutUri = encodeURIComponent(`${window.location.origin}`);
+    // const clientId = '7gk5b0vbt5no9ek8kho0n5gv0f';
+    // const logoutUri = encodeURIComponent(`${window.location.origin}`);
 
-    window.location.href = `https://us-east-1afdy4gkff.auth.us-east-1.amazoncognito.com/logout?client_id=${clientId}&logout_uri=${logoutUri}`;
+    // window.location.href = `https://us-east-1afdy4gkff.auth.us-east-1.amazoncognito.com/logout?client_id=${clientId}&logout_uri=${logoutUri}`;
   }
 }

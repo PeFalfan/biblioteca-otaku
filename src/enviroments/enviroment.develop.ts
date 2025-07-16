@@ -1,4 +1,4 @@
 export const enviroment = {
     production: true,
-    apiUrl: 'http://100.24.23.200/8181',
+    apiUrl: 'https://bff-library.duckdns.org:8443',
 };

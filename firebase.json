@@ -1,0 +1,32 @@
+{
+  "hosting": {
+    "public": "dist/biblioteca-otaku/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; media-src 'self' https://bff-library.duckdns.org:8443; img-src 'self' data: https://pbs.twimg.com https://i.pinimg.com;  script-src 'self' 'unsafe-inline' https://dnh6qh3zeqkj3.cloudfront.net https://www.gstatic.com https://www.googleapis.com https://us-east-1afdy4gkff.auth.us-east-1.amazoncognito.com; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://bff-library.duckdns.org:8443  https://*.amazoncognito.com https://*.googleapis.com;"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      }
+    ],
+
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

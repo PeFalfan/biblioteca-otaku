@@ -29,9 +29,6 @@ export class VideoService {
 
   getVideoUrl(folderName: string, fileName: string): string {
     var url = `${this.baseUrl}/getVideo/${folderName}/${fileName}`;
-    console.log("folder: " + folderName);
-    console.log("file: " + fileName);
-    console.log("video url: " + url);
     if (url.charAt(url.length - 1) == "/") {
       url = url.substring(0, url.length - 1)
     }

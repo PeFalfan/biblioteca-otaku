@@ -10,9 +10,9 @@ export const routes: Routes = [
     {
         path: '',
         component: HomeComponent,
-        children: [
-            { path: '', component: HomeComponent },
-        ],
+        // children: [
+        //     { path: '', component: HomeComponent },
+        // ],
     },
     { path: 'serie/:title', component: SeriesDetailComponent },
     { path: 'serie/:title/:chapter', component: VideoPlayerComponent },

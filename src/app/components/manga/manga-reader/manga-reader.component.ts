@@ -49,11 +49,8 @@ export class MangaReaderComponent implements OnInit{
   loadMangaInfo() {
     const ruta = this.router.url;
     let splits = ruta.split("/");
-    console.log(splits);
     this.mangaName = splits[3].replaceAll('%20', ' ').replaceAll('%28','(').replaceAll('%29', ')');
     this.chapterName = splits[4].replaceAll('%20', ' ').replaceAll('%28', '(').replaceAll('%29', ')');
-    console.log(this.mangaName);
-    console.log(this.chapterName);
   }
 
   async descomprimirCbz(blob: Blob) {
@@ -86,7 +83,6 @@ export class MangaReaderComponent implements OnInit{
     this.mangaService.getChapters(this.mangaName).subscribe((loadedChapters) => {
       this.chaptersList = loadedChapters;
       this.currentChapterIndex = this.chaptersList.indexOf(this.mangaName + '/' + this.chapterName);
-      console.log(this.currentChapterIndex);
       this.loadCurrentChapter();
     });
   }

@@ -4,6 +4,7 @@ import { MainNavbarComponent } from "./utils/shared/main-navbar/main-navbar.comp
 import { FooterComponent } from "./utils/shared/footer/footer.component";
 
 import { OidcSecurityService } from 'angular-auth-oidc-client';
+import { AuthService } from './services/auth/auth.service';
 
 @Component({
   standalone: true,
@@ -16,12 +17,18 @@ import { OidcSecurityService } from 'angular-auth-oidc-client';
 export class AppComponent implements OnInit {
   title = 'biblioteca-otaku';
 
+  constructor(private authService: AuthService) { 
+
+  }
+
   private oidcSecurityService = inject(OidcSecurityService);
   isAuthenticated = false;
 
   ngOnInit(): void {
-    this.oidcSecurityService.isAuthenticated$.subscribe(({ isAuthenticated }) => {
-      this.isAuthenticated = isAuthenticated;
-    });
+    this.authService.handleRedirect(); // Captura token si viene de Cognito
+    this.authService.checkAuth();   // Redirige si no está autenticado
+    // this.oidcSecurityService.isAuthenticated$.subscribe(({ isAuthenticated }) => {
+    //   this.isAuthenticated = isAuthenticated;
+    // });
   }
 }
