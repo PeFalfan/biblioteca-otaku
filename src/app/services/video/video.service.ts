@@ -34,13 +34,6 @@ export class VideoService {
     }
     return url;
   }
-  // getVideoUrl(folderName: string, fileName: string): string {
-  //   var url = `${this.baseUrl}/getVideo/${folderName}/${fileName}`;
-  //   if (url.charAt(url.length - 1) == "/") {
-  //     url = url.substring(0, url.length - 1)
-  //   }
-  //   return url;
-  // }
 
   getAllSeriesData(): Observable<SeriesDataModel[]> {
     return this.http.get<SeriesDataModel[]>(`${this.baseUrl}/getseriesData`);
