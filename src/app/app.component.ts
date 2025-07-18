@@ -27,8 +27,5 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.authService.handleRedirect(); // Captura token si viene de Cognito
     this.authService.checkAuth();   // Redirige si no está autenticado
-    // this.oidcSecurityService.isAuthenticated$.subscribe(({ isAuthenticated }) => {
-    //   this.isAuthenticated = isAuthenticated;
-    // });
   }
 }

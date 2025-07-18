@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
   private clientId = '7gk5b0vbt5no9ek8kho0n5gv0f';
-  private redirectUri = 'http://localhost:4200';
-  // private redirectUri = 'https://biblioteca-otaku-c6329.web.app';
+  // private redirectUri = 'http://localhost:4200';
+  private redirectUri = 'https://biblioteca-otaku-c6329.web.app';
   private cognitoDomain = 'https://us-east-1afdy4gkff.auth.us-east-1.amazoncognito.com';
 
   constructor() { }
