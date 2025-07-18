@@ -8,30 +8,12 @@ import { MangaReaderComponent } from './components/manga/manga-reader/manga-read
 import { VideoHomeComponent } from './components/video/video-home/video-home.component';
 
 export const routes: Routes = [
-    {
-        path: '',
-        component: HomeComponent,
-        // children: [
-        //     { path: '', component: HomeComponent },
-        // ],
-    },
+    { path: '', component: HomeComponent },
     { path: 'serie', component: VideoHomeComponent },
     { path: 'serie/:title', component: SeriesDetailComponent },
     { path: 'serie/:title/:chapter', component: VideoPlayerComponent },
-    {
-        path: 'manga',
-        component: MangaHomeComponent,
-        // children: [
-        //     {
-        //         path: 'details/:mangaName', component: MangaDetailsComponent
-        //     }
-        // ]
-    },
-    {
-        path: 'manga/details/:mangaName', component: MangaDetailsComponent
-    },
-    {
-        path: 'manga/details/:mangaName/:chapter', component: MangaReaderComponent
-    }
+    { path: 'manga', component: MangaHomeComponent },
+    { path: 'manga/details/:mangaName', component: MangaDetailsComponent },
+    { path: 'manga/details/:mangaName/:chapter', component: MangaReaderComponent }
 
 ];

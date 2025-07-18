@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SeriesDataModel } from '../../../models/serie.model';
 import { NgFor } from '@angular/common';
 

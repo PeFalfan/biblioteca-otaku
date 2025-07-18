@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MangaService } from '../../../services/manga/manga.service';
 import { Router } from '@angular/router';
-import { unzipSync, strFromU8 } from 'fflate';
+import { unzipSync } from 'fflate';
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({

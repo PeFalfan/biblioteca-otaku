@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MainNavbarComponent } from "./utils/shared/main-navbar/main-navbar.component";
 import { FooterComponent } from "./utils/shared/footer/footer.component";
