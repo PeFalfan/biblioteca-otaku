@@ -2,5 +2,5 @@ projectKey=biblioteca-otaku
 serverUrl=http://localhost:9100
 serverVersion=25.7.0.110598
 dashboardUrl=http://localhost:9100/dashboard?id=biblioteca-otaku
-ceTaskId=61ccb9e1-d952-4074-92a4-a5bdbac2147e
-ceTaskUrl=http://localhost:9100/api/ce/task?id=61ccb9e1-d952-4074-92a4-a5bdbac2147e
+ceTaskId=a8758674-c064-46e8-bcdb-56c0f173dcb3
+ceTaskUrl=http://localhost:9100/api/ce/task?id=a8758674-c064-46e8-bcdb-56c0f173dcb3

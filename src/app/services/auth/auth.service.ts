@@ -7,7 +7,7 @@ export class AuthService {
   private readonly clientId = '7gk5b0vbt5no9ek8kho0n5gv0f';
   private readonly redirectUri = 'http://localhost:4200';
   // private readonly redirectUri = 'https://biblioteca-otaku-c6329.web.app';
-  private cognitoDomain = 'https://us-east-1afdy4gkff.auth.us-east-1.amazoncognito.com';
+  private readonly cognitoDomain = 'https://us-east-1afdy4gkff.auth.us-east-1.amazoncognito.com';
 
   constructor() { }
 
