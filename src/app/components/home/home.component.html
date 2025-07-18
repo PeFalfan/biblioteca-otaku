@@ -1,11 +1,15 @@
-<!-- grid de pantalla principal -->
-
 <div class="grid-container">
     <h1>Series recientes</h1>
-    
 </div>
+
 <div class="grid-container">
-    
+    <app-loading [isLoading]="isLoadingVideo"></app-loading>
+    <app-loading [isLoading]="isLoadingVideo"></app-loading>
+    <app-loading [isLoading]="isLoadingVideo"></app-loading>
+    <app-loading [isLoading]="isLoadingVideo"></app-loading>
+    <app-loading [isLoading]="isLoadingVideo"></app-loading>
+</div>
+<div class="grid-container" *ngIf="!isLoadingVideo">
     <div *ngFor="let serie of seriesData; let i = index" class="grid-item">
         <app-my-card [seriesData]=serie></app-my-card>
     </div>
@@ -15,8 +19,15 @@
     <h1>Películas recientes</h1> 
 </div>
   
-<div class="grid-container ">
-    <div *ngFor="let serie of seriesData; let i = index" class="grid-item ">
+<div class="grid-container">
+    <app-loading [isLoading]="isLoadingVideo"></app-loading>
+    <app-loading [isLoading]="isLoadingVideo"></app-loading>
+    <app-loading [isLoading]="isLoadingVideo"></app-loading>
+    <app-loading [isLoading]="isLoadingVideo"></app-loading>
+    <app-loading [isLoading]="isLoadingVideo"></app-loading>
+</div>
+<div class="grid-container" *ngIf="!isLoadingVideo">
+    <div *ngFor="let serie of seriesData; let i = index" class="grid-item">
         <app-my-card [seriesData]=serie></app-my-card>
     </div>
 </div>
@@ -24,7 +35,17 @@
 <div class="grid-container">
     <h1>Mangas recientes</h1> 
 </div>
-  
-<div class="grid-container ">
-    <button (click)="navigateTo()">Ir a mangas</button>
+
+<div class="grid-container">
+    <app-loading [isLoading]="isLoadingManga"></app-loading>
+    <app-loading [isLoading]="isLoadingManga"></app-loading>
+    <app-loading [isLoading]="isLoadingManga"></app-loading>
+    <app-loading [isLoading]="isLoadingManga"></app-loading>
+    <app-loading [isLoading]="isLoadingManga"></app-loading>
+</div>
+
+<div class="grid-container" *ngIf="!isLoadingManga">
+    <div *ngFor="let serie of loadedMangas; let i = index" class="grid-item">
+        <app-manga-card [mangaModel]="serie" ></app-manga-card>
+    </div>
 </div>

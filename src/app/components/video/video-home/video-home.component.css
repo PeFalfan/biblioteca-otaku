@@ -1,13 +1,13 @@
 .grid-container {
     display: grid;
+    /* grid-template-columns: auto auto auto auto auto auto; */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     max-width: calc(6 * 200px + 6 * 16px);
-    margin: auto auto;
+    margin: 0 auto;
     gap: 20px;
     padding: 20px;
     color: white;
-    background-color: #f8f9fa;
-    justify-content: center;
+    /* background-color: #f8f9fa; */
     background-color: #111;
 }
 
@@ -15,6 +15,10 @@
     background-color: #343a40;
     color: white;
     padding: 20px;
-    margin: auto auto;
+    text-align: center;
     border-radius: 8px;
+}
+
+h1 {
+    color: white;
 }

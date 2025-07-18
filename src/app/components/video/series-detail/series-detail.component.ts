@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { SeriesDataModel, SeriesType } from '../../../models/serie.model';
 import { VideoService } from '../../../services/video/video.service';
 import { ChapterCardComponent } from "../../../utils/shared/chapter-card/chapter-card.component";
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
+import { LoadingComponent } from "../../../utils/shared/loading/loading.component";
 
 @Component({
   selector: 'app-series-detail',
-  imports: [DetailsBannerComponent, ChapterCardComponent, NgFor],
+  imports: [DetailsBannerComponent, ChapterCardComponent, NgFor, NgIf, LoadingComponent],
   templateUrl: './series-detail.component.html',
   styleUrl: './series-detail.component.css'
 })
@@ -28,6 +29,8 @@ export class SeriesDetailComponent implements OnInit{
     mainImageUrl: ''
   };
   title: string = '';
+  isLoading: boolean = true;
+
   
   constructor(private router: Router, private videoService : VideoService) {}
   
@@ -42,6 +45,7 @@ export class SeriesDetailComponent implements OnInit{
   loadSelectedSeriesDetail(seriesName: string) {
     this.videoService.getCurrentSeriesDetail(seriesName).subscribe((seriesDetail) => {
       this.series = seriesDetail;
+      this.isLoading = false;
     })
   }
 

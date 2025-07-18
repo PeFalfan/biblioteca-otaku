@@ -1,18 +1,20 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MangaDataModel } from '../../../models/manga.model';
 import { Router } from '@angular/router';
 import { MangaService } from '../../../services/manga/manga.service';
+import { LoadingComponent } from "../../../utils/shared/loading/loading.component";
 
 @Component({
   selector: 'app-manga-home',
-  imports: [NgFor],
+  imports: [NgFor, NgIf, LoadingComponent],
   templateUrl: './manga-home.component.html',
   styleUrl: './manga-home.component.css'
 })
 export class MangaHomeComponent implements OnInit{
   
   loadedMangas: MangaDataModel[] = [];
+  isLoading: boolean = true;
   
   constructor(private router: Router, private mangaService : MangaService) {}
 
@@ -23,13 +25,11 @@ export class MangaHomeComponent implements OnInit{
   loadAllMangas() {
     this.mangaService.getMangas().subscribe((mangaDetail: MangaDataModel[]) => {
       this.loadedMangas = mangaDetail;
+      this.isLoading = false;
     });
   }
 
   navigateTomangaDetails(mangaName: string) {
     this.router.navigate([`manga/details/${mangaName}`]);
   }
-
-
-
 }
