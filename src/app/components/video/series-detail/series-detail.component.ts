@@ -9,6 +9,7 @@ import { LoadingComponent } from "../../../utils/shared/loading/loading.componen
 
 @Component({
   selector: 'app-series-detail',
+  standalone: true,
   imports: [DetailsBannerComponent, ChapterCardComponent, NgFor, NgIf, LoadingComponent],
   templateUrl: './series-detail.component.html',
   styleUrl: './series-detail.component.css'

@@ -15,8 +15,8 @@ import { VideoService } from '../../../services/video/video.service';
 export class VideoPlayerComponent implements OnInit, AfterViewInit {
 
   title: string = "";
-  selectedVideoUrl?: string;
-  player!: Player;
+  selectedVideoUrl: string = '';
+  player?: Player;
 
   constructor(private readonly videoService: VideoService, private readonly router: Router) { }
   

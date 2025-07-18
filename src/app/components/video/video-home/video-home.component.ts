@@ -7,6 +7,7 @@ import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-video-home',
+  standalone: true,
   imports: [LoadingComponent, MyCardComponent, NgIf, NgFor],
   templateUrl: './video-home.component.html',
   styleUrl: './video-home.component.css'
@@ -28,8 +29,4 @@ export class VideoHomeComponent implements OnInit{
       this.isLoading = false;
     });
   }
-  
-
-
-
 }

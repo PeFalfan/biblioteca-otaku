@@ -1,11 +1,11 @@
 export class MangaDataModel {
 
-        id: number;
-        title: string;
-        currentChapters: number;
-        mainTag: string;
-        description: string;
-        coverUrl: string;
+    id: number;
+    title: string;
+    currentChapters: number;
+    mainTag: string;
+    description: string;
+    coverUrl: string;
     yearOfRelease: number;
     
     constructor(data: any) {

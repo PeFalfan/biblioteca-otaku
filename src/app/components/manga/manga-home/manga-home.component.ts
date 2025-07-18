@@ -7,6 +7,7 @@ import { LoadingComponent } from "../../../utils/shared/loading/loading.componen
 
 @Component({
   selector: 'app-manga-home',
+  standalone: true,
   imports: [NgFor, NgIf, LoadingComponent],
   templateUrl: './manga-home.component.html',
   styleUrl: './manga-home.component.css'

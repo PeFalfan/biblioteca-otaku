@@ -6,6 +6,7 @@ import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-manga-reader',
+  standalone: true,
   imports: [NgFor, NgIf],
   templateUrl: './manga-reader.component.html',
   styleUrl: './manga-reader.component.css'

@@ -6,6 +6,7 @@ import { MangaDataModel } from '../../../models/manga.model';
 
 @Component({
   selector: 'app-manga-details',
+  standalone: true,
   imports: [NgFor],
   templateUrl: './manga-details.component.html',
   styleUrl: './manga-details.component.css'

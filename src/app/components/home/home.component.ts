@@ -11,6 +11,7 @@ import { LoadingComponent } from "../../utils/shared/loading/loading.component";
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [NgFor, MyCardComponent, NgIf, MangaCardComponent, LoadingComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
