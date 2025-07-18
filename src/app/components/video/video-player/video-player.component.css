@@ -1,10 +1,6 @@
 .grid-container {
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); */
-    /* gap: 16px; */
-    /* padding: 20px; */
     justify-content: center;
-    /* Fondo oscuro como en la imagen */
 }
 
 .video-js {

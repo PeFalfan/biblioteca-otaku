@@ -18,7 +18,7 @@ export class VideoPlayerComponent implements OnInit, AfterViewInit {
   selectedVideoUrl?: string;
   player!: Player;
 
-  constructor(private videoService: VideoService, private router: Router) { }
+  constructor(private readonly videoService: VideoService, private readonly router: Router) { }
   
   ngOnInit(): void {
     const ruta = this.router.url;

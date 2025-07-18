@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class MangaCardComponent {
   @Input() mangaModel!: MangaDataModel;
 
-  constructor(private router: Router) { }
+  constructor(private readonly router: Router) { }
   
   onClick() {
     this.router.navigate([`/manga/details/${this.mangaModel.title}`]);

@@ -16,7 +16,7 @@ export class MangaHomeComponent implements OnInit{
   loadedMangas: MangaDataModel[] = [];
   isLoading: boolean = true;
   
-  constructor(private router: Router, private mangaService : MangaService) {}
+  constructor(private readonly router: Router, private readonly mangaService : MangaService) {}
 
   ngOnInit(): void {
     this.loadAllMangas();

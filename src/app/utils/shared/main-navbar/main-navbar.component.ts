@@ -14,7 +14,7 @@ export class MainNavbarComponent{
   isUserLogged: boolean = true;
   currentView: string[] = ['active', '', '', '', ''];
 
-  constructor(private authService: AuthService, private router:Router) {}
+  constructor(private readonly authService: AuthService, private readonly router:Router) {}
 
   goTo(navigation: string) {
     this.validateCurrentView(navigation);

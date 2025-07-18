@@ -8,13 +8,7 @@ import { NgFor } from '@angular/common';
   templateUrl: './details-banner.component.html',
   styleUrl: './details-banner.component.css'
 })
-export class DetailsBannerComponent implements OnInit{
+export class DetailsBannerComponent{
   @Input()
-  series!: SeriesDataModel;
-  ngOnInit(): void { }
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['series']) {
-    }
-  }
-  
+  series!: SeriesDataModel;  
 }

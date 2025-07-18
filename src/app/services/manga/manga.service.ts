@@ -8,9 +8,9 @@ import { enviroment } from '../../../enviroments/enviroment.develop';
   providedIn: 'root'
 })
 export class MangaService {
-  private baseUrl = `${enviroment.apiUrl}/api/mangas`;
+  private readonly baseUrl = `${enviroment.apiUrl}/api/mangas`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
   // endpoint to load all mangas
   getMangas(): Observable<MangaDataModel[]> {

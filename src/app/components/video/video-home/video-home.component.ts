@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SeriesDataModel } from '../../../models/serie.model';
 import { VideoService } from '../../../services/video/video.service';
-import { Router } from '@angular/router';
 import { LoadingComponent } from "../../../utils/shared/loading/loading.component";
 import { MyCardComponent } from "../../../utils/shared/my-card/my-card.component";
 import { NgFor, NgIf } from '@angular/common';
@@ -17,7 +16,7 @@ export class VideoHomeComponent implements OnInit{
   seriesData: SeriesDataModel[] = [];
   isLoading: boolean = true;
 
-  constructor(private router: Router, private videoService: VideoService) { }
+  constructor(private readonly videoService: VideoService) { }
   
   ngOnInit(): void {
     this.loadAllSeries();

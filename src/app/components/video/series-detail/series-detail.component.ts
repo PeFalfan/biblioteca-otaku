@@ -32,7 +32,7 @@ export class SeriesDetailComponent implements OnInit{
   isLoading: boolean = true;
 
   
-  constructor(private router: Router, private videoService : VideoService) {}
+  constructor(private readonly router: Router, private readonly videoService : VideoService) {}
   
   ngOnInit(): void {
     const ruta = this.router.url;

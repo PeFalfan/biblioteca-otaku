@@ -18,15 +18,12 @@ export class MangaReaderComponent implements OnInit{
   chaptersList: string[] = [];
   currentChapterIndex: number = 0;
 
-  constructor(private mangaService: MangaService, private router: Router) { }
+  constructor(private readonly mangaService: MangaService, private readonly router: Router) { }
   
   ngOnInit(): void {
     this.loadMangaInfo();
 
     this.loadChapters();
-
-    
-
   }
 
   loadCurrentChapter() {
@@ -61,7 +58,7 @@ export class MangaReaderComponent implements OnInit{
     const extensionesValidas = ['.jpg', '.jpeg', '.png', '.webp'];
     const nombres = Object.keys(zip).filter(name =>
       extensionesValidas.some(ext => name.toLowerCase().endsWith(ext))
-    ).sort();
+    ).sort((a, b) => a.localeCompare(b));
 
     this.images = nombres.map(nombre => {
       const archivo = zip[nombre];

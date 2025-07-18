@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class MyCardComponent {
   @Input() seriesData!: SeriesDataModel;
 
-  constructor(private router: Router) { }
+  constructor(private readonly router: Router) { }
   
   onClick() {
     this.router.navigate([`/serie/${this.seriesData.title}`]);

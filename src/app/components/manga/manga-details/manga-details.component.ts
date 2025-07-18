@@ -24,7 +24,7 @@ export class MangaDetailsComponent implements OnInit{
     yearOfRelease: 0
   }
 
-  constructor(private router: Router, private mangaService: MangaService) {}
+  constructor(private readonly router: Router, private readonly mangaService: MangaService) {}
 
   ngOnInit(): void {
     this.getTitleFromURL();
