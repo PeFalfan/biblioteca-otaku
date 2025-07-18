@@ -12,8 +12,6 @@ export class MyCardComponent {
   @Input() seriesData!: SeriesDataModel;
 
   constructor(private router: Router) { }
-
-  ngOnInit(): void { }
   
   onClick() {
     this.router.navigate([`/serie/${this.seriesData.title}`]);

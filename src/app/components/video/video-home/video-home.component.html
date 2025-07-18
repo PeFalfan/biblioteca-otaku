@@ -1,0 +1,24 @@
+<div class="grid-container">
+    <h1>Bienvenido a la sección de series y películas!</h1>
+</div>
+<!-- por ahora cargaremos todas las series, hay que generar una busqueda por nombre y un filtro por letra -->
+<div class="grid-container">
+    <app-loading [isLoading]="isLoading"></app-loading>
+</div>
+
+<div class="grid-container" *ngIf="!isLoading">
+    <div *ngFor="let serie of seriesData; let i = index" class="grid-item">
+        <app-my-card [seriesData]=serie></app-my-card>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

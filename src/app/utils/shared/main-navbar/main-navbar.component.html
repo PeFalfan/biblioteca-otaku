@@ -16,19 +16,19 @@
         <div class="collapse navbar-collapse" id="navbarOpciones">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" (click)="goTo('home')" aria-current="page" href="#">Inicio</a>
+                    <a class="nav-link {{currentView[0]}}" (click)="goTo('')" aria-current="page">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" (click)="goTo('library')" href="#">Biblioteca</a>
+                    <a class="nav-link {{currentView[1]}}" (click)="goTo('serie')" >Animes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{currentView[2]}}" (click)="goTo('manga')" >Manga</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{currentView[3]}}" (click)="goTo('myAccount')">Mi cuenta</a>
                 </li>
                 <li class="nav-item" *ngIf="isUserLogged">
-                    <a class="nav-link" (click)="logout()" href="#">LogOut</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" (click)="goTo('myAccount')" href="#">Mi cuenta</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" (click)="goTo('myLists')" href="#">Mis listas</a>
+                    <a class="nav-link {{currentView[4]}}" (click)="logout()" >LogOut</a>
                 </li>
             </ul>
         </div>

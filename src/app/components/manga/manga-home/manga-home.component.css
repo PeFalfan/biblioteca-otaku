@@ -1,13 +1,36 @@
+.grid-container {
+    display: grid;
+    /* grid-template-columns: auto auto auto auto auto auto; */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: calc(6 * 200px + 6 * 16px);
+    margin: 0 auto;
+    gap: 20px;
+    padding: 20px;
+    color: white;
+    /* background-color: #f8f9fa; */
+    background-color: #111;
+}
+
+.grid-item {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+
+
 .updates-section {
     padding: 2rem;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #f7f8fc;
+    background-color: #111;
 }
 
 .section-title {
     font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #333;
+    margin-bottom: 4rem;
+    color: white;
 }
 
 .manga-grid {

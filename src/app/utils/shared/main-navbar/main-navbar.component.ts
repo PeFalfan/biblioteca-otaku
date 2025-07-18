@@ -1,6 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-navbar',
@@ -8,23 +9,45 @@ import { AuthService } from '../../../services/auth/auth.service';
   templateUrl: './main-navbar.component.html',
   styleUrl: './main-navbar.component.css'
 })
-export class MainNavbarComponent {
+export class MainNavbarComponent{
 
   isUserLogged: boolean = true;
+  currentView: string[] = ['active', '', '', '', ''];
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router:Router) {}
 
   goTo(navigation: string) {
+    this.validateCurrentView(navigation);
+    this.router.navigate([`/${navigation}/`]);
   }
 
   logout(): void {
     this.authService.logout();
-    // sessionStorage.clear();
-    // localStorage.clear();
-    
-    // const clientId = '7gk5b0vbt5no9ek8kho0n5gv0f';
-    // const logoutUri = encodeURIComponent(`${window.location.origin}`);
+  }
 
-    // window.location.href = `https://us-east-1afdy4gkff.auth.us-east-1.amazoncognito.com/logout?client_id=${clientId}&logout_uri=${logoutUri}`;
+  validateCurrentView(navigation: string) {
+
+    switch (navigation) {
+      case (''): {
+        this.currentView = ['active', '', '', '', ''];
+        break;
+      }
+      case ('serie'): {
+        this.currentView = ['', 'active', '', '', ''];
+        break;  
+        }
+      case ('manga'): {
+        this.currentView = ['', '', 'active', '', ''];
+        break;  
+        }
+      case ('myAccount'): {
+        this.currentView = ['', '', '', 'active', ''];
+        break;  
+        }
+      case ('logout'): {
+        this.currentView = ['', '', '', '', 'active'];
+        break;  
+        }
+    }
   }
 }
