@@ -1,20 +1,27 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import { SeriesDataModel } from '../../../models/serie.model';
+import { Component, Input } from '@angular/core';
+import { SeriesDataModel, SeriesType } from '../../../models/serie.model';
 import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-details-banner',
+  standalone: true,
   imports: [NgFor],
   templateUrl: './details-banner.component.html',
   styleUrl: './details-banner.component.css'
 })
-export class DetailsBannerComponent implements OnInit{
+export class DetailsBannerComponent{
   @Input()
-  series!: SeriesDataModel;
-  ngOnInit(): void { }
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['series']) {
-    }
-  }
-  
+  series: SeriesDataModel = {
+    id: 0,
+    title: '',
+    currentChapters: 0,
+    totalChapters: 0,
+    yearOfRelease: 0,
+    mainTag: SeriesType.ANIME,
+    allTags: [],
+    originalName: '',
+    description: '',
+    chapters: [],
+    mainImageUrl: ''
+  };  
 }

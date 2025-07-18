@@ -1,12 +1,11 @@
 export class MangaDataModel {
 
-        id: number;
-        title: string;
-        currentChapters: number;
-        mainTag: string;
-        description: string;
-        // chapters: Array<ChapterModel>;
-        coverUrl: string;
+    id: number;
+    title: string;
+    currentChapters: number;
+    mainTag: string;
+    description: string;
+    coverUrl: string;
     yearOfRelease: number;
     
     constructor(data: any) {
@@ -15,7 +14,6 @@ export class MangaDataModel {
         this.currentChapters = data.currentChapters;
         this.mainTag = data.mainTag;
         this.description = data.description;
-        // this.chapters = data.chapters;
         this.coverUrl = data.coverUrl;
         this.yearOfRelease = data.yearOfRelease;
     }

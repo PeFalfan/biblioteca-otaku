@@ -8,9 +8,9 @@ import { enviroment } from '../../../enviroments/enviroment.develop';
   providedIn: 'root'
 })
 export class VideoService {
-  private baseUrl = `${enviroment.apiUrl}/api`;
+  private readonly baseUrl = `${enviroment.apiUrl}/api`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
   // Endpoint to load all available series
   // returns a List<String> with the names of the series available.
@@ -28,8 +28,8 @@ export class VideoService {
   }
 
   getVideoUrl(folderName: string, fileName: string): string {
-    var url = `${this.baseUrl}/getVideo/${folderName}/${fileName}`;
-    if (url.charAt(url.length - 1) == "/") {
+    let url = `${this.baseUrl}/getVideo/${folderName}/${fileName}`;
+    if (url.endsWith("/")) {
       url = url.substring(0, url.length - 1)
     }
     return url;

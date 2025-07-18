@@ -11,6 +11,7 @@ import { LoadingComponent } from "../../utils/shared/loading/loading.component";
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [NgFor, MyCardComponent, NgIf, MangaCardComponent, LoadingComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -22,7 +23,7 @@ export class HomeComponent implements OnInit{
   isLoadingVideo: boolean = true;
   isLoadingManga: boolean = true;
 
-  constructor(private videoService: VideoService, private router: Router, private mangaService: MangaService) { }
+  constructor(private readonly videoService: VideoService, private readonly router: Router, private readonly mangaService: MangaService) { }
   
   ngOnInit(): void {
     this.videoService.getHighlightedMedia().subscribe((list) => {

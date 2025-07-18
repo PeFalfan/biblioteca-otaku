@@ -9,6 +9,7 @@ import { LoadingComponent } from "../../../utils/shared/loading/loading.componen
 
 @Component({
   selector: 'app-series-detail',
+  standalone: true,
   imports: [DetailsBannerComponent, ChapterCardComponent, NgFor, NgIf, LoadingComponent],
   templateUrl: './series-detail.component.html',
   styleUrl: './series-detail.component.css'
@@ -32,7 +33,7 @@ export class SeriesDetailComponent implements OnInit{
   isLoading: boolean = true;
 
   
-  constructor(private router: Router, private videoService : VideoService) {}
+  constructor(private readonly router: Router, private readonly videoService : VideoService) {}
   
   ngOnInit(): void {
     const ruta = this.router.url;

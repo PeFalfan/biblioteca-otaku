@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../../../services/auth/auth.service';
 import { Router } from '@angular/router';
 
@@ -14,7 +14,7 @@ export class MainNavbarComponent{
   isUserLogged: boolean = true;
   currentView: string[] = ['active', '', '', '', ''];
 
-  constructor(private authService: AuthService, private router:Router) {}
+  constructor(private readonly authService: AuthService, private readonly router:Router) {}
 
   goTo(navigation: string) {
     this.validateCurrentView(navigation);

@@ -7,6 +7,7 @@ import { LoadingComponent } from "../../../utils/shared/loading/loading.componen
 
 @Component({
   selector: 'app-manga-home',
+  standalone: true,
   imports: [NgFor, NgIf, LoadingComponent],
   templateUrl: './manga-home.component.html',
   styleUrl: './manga-home.component.css'
@@ -16,7 +17,7 @@ export class MangaHomeComponent implements OnInit{
   loadedMangas: MangaDataModel[] = [];
   isLoading: boolean = true;
   
-  constructor(private router: Router, private mangaService : MangaService) {}
+  constructor(private readonly router: Router, private readonly mangaService : MangaService) {}
 
   ngOnInit(): void {
     this.loadAllMangas();

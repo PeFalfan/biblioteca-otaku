@@ -1,4 +1,4 @@
-<div class="header-hero d-flex align-items-center" [style.background-image]="'url(' + series!.mainImageUrl + ')'">
+<div class="header-hero d-flex align-items-center" [style.background-image]="'url(' + series.mainImageUrl + ')'">
     <div class="container">
         <div class="header-content">
             <h1 class="display-4 fw-bold">{{series!.title}}</h1>
@@ -8,10 +8,6 @@
                 </div>
             </div>
             <br>
-            <!-- <div class="mb-3">
-                <a href="#" class="btn btn-orange btn-lg me-2">▶ Comenzar a ver E1</a>
-                <button class="btn btn-outline-light">☆</button>
-            </div> -->
             <p>
                 {{series!.description}}
             </p>

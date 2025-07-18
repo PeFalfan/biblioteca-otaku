@@ -15,10 +15,10 @@ import { VideoService } from '../../../services/video/video.service';
 export class VideoPlayerComponent implements OnInit, AfterViewInit {
 
   title: string = "";
-  selectedVideoUrl?: string;
-  player!: Player;
+  selectedVideoUrl: string = '';
+  player?: Player;
 
-  constructor(private videoService: VideoService, private router: Router) { }
+  constructor(private readonly videoService: VideoService, private readonly router: Router) { }
   
   ngOnInit(): void {
     const ruta = this.router.url;
