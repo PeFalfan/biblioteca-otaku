@@ -20,7 +20,7 @@ export class VideoService {
 
   // Endpoint to load the data for one series, based of the title
   getCurrentSeriesDetail(title: string): Observable<SeriesDataModel> {
-    return this.http.get<SeriesDataModel>(`${this.baseUrl}/getDetails${title}`);
+    return this.http.get<SeriesDataModel>(`${this.baseUrl}/getDetails/${title}`);
   } 
 
   getVideoList(): Observable<string[]> {

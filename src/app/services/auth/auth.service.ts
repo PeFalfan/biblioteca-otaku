@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { jwtDecode } from 'jwt-decode';
+import { UserService } from '../user/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -49,6 +51,19 @@ export class AuthService {
 
   getAccessToken(): string | null {
     return localStorage.getItem('access_token');
+  }
+
+  getEmail(): string | null {
+    const idToken = localStorage.getItem('id_token');
+    if (!idToken) return null;
+
+    try {
+      const decoded: any = jwtDecode(idToken);
+      return decoded.email || null;
+    } catch (error) {
+      console.error('Error al decodificar id_token:', error);
+      return null;
+    }
   }
 
 }

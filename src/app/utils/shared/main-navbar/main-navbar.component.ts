@@ -40,7 +40,7 @@ export class MainNavbarComponent{
         this.currentView = ['', '', 'active', '', ''];
         break;  
         }
-      case ('myAccount'): {
+      case ('perfil'): {
         this.currentView = ['', '', '', 'active', ''];
         break;  
         }

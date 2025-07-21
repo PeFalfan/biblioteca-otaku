@@ -6,6 +6,7 @@ import { VideoPlayerComponent } from './components/video/video-player/video-play
 import { MangaDetailsComponent } from './components/manga/manga-details/manga-details.component';
 import { MangaReaderComponent } from './components/manga/manga-reader/manga-reader.component';
 import { VideoHomeComponent } from './components/video/video-home/video-home.component';
+import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -14,6 +15,8 @@ export const routes: Routes = [
     { path: 'serie/:title/:chapter', component: VideoPlayerComponent },
     { path: 'manga', component: MangaHomeComponent },
     { path: 'manga/details/:mangaName', component: MangaDetailsComponent },
-    { path: 'manga/details/:mangaName/:chapter', component: MangaReaderComponent }
+    { path: 'manga/details/:mangaName/:chapter', component: MangaReaderComponent },
+    { path: 'perfil', component: UserProfileComponent }
+
 
 ];

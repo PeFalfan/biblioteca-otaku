@@ -1,0 +1,15 @@
+<div class="grid-container">
+    <h1>Estas son tus series favoritas!</h1>
+</div>
+<div class="grid-container">
+    <app-loading [isLoading]="isLoading"></app-loading>
+</div>
+<div class="grid-container" *ngIf="!isLoading">
+    <div class="list-group">
+        <a class="list-group-item list-group-item-action" *ngFor="let fav of favs; let i = index">
+            {{fav.title}} - {{fav.mainTag}}
+            <button type="button" class="btn btn-danger" (click)="deleteFromFavs(fav.title)">Eliminar de favoritos</button>
+            <button type="button" class="btn btn-info" (click)="goToDetail(fav)">Ir al detalle</button>
+        </a>
+    </div>
+</div>

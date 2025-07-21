@@ -8,6 +8,8 @@ import { MangaService } from '../../services/manga/manga.service';
 import { MangaDataModel } from '../../models/manga.model';
 import { MangaCardComponent } from "../manga/manga-home/manga-card/manga-card.component";
 import { LoadingComponent } from "../../utils/shared/loading/loading.component";
+import { UserService } from '../../services/user/user.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +25,13 @@ export class HomeComponent implements OnInit{
   isLoadingVideo: boolean = true;
   isLoadingManga: boolean = true;
 
-  constructor(private readonly videoService: VideoService, private readonly router: Router, private readonly mangaService: MangaService) { }
+  constructor(
+    private readonly videoService: VideoService,
+    private readonly router: Router,
+    private readonly mangaService: MangaService,
+    private readonly authService: AuthService,
+    private readonly userService: UserService,
+  ) { }
   
   ngOnInit(): void {
     this.videoService.getHighlightedMedia().subscribe((list) => {
@@ -34,6 +42,12 @@ export class HomeComponent implements OnInit{
     this.mangaService.getMangas().subscribe((mangaDetail: MangaDataModel[]) => {
       this.loadedMangas = mangaDetail;
       this.isLoadingManga = false;
+    });
+
+    let email = this.authService.getEmail()
+    console.log("email de sesión: " + email);
+    this.userService.validateOrCreateUser(email ?? '').subscribe((resp) => {
+      console.log("fue registrado: " + resp);
     });
   }
 
